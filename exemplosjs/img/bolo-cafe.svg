@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Bolo de Café">
+<rect width="600" height="360" fill="#ead6c3"/>
+<circle cx="300" cy="175" r="132" fill="#fffaf0" opacity=".95"/>
+<circle cx="300" cy="175" r="110" fill="#6b3e2e" opacity=".22"/>
+<ellipse cx="300" cy="195" rx="105" ry="62" fill="#6b3e2e" opacity=".9"/>
+<ellipse cx="300" cy="178" rx="98" ry="51" fill="#fff4df"/>
+<path d="M220 180 Q255 115 300 155 Q350 115 382 182 Q355 235 300 220 Q245 238 220 180Z" fill="#6b3e2e" opacity=".8"/>
+<circle cx="268" cy="170" r="10" fill="#fffaf0"/>
+<circle cx="325" cy="190" r="9" fill="#fffaf0"/>
+<circle cx="350" cy="160" r="7" fill="#fffaf0"/>
+<text x="300" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#352b25">Bolo de Café</text>
+</svg>

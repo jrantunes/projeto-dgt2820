@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Receitas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    const receitas = [
+      {
+        titulo: "Arroz de Couve-Flor",
+        imagem: "img/arroz-couve-flor.svg",
+        ingredientes: ["Arroz", "Couve-flor", "Cebola média", "Azeite"],
+        preparo: "Cozinhe o arroz. Refogue a cebola no azeite, acrescente a couve-flor picada e misture ao arroz até ficar bem incorporado."
+      },
+      {
+        titulo: "Bolo de Café",
+        imagem: "img/bolo-cafe.svg",
+        ingredientes: ["Farinha de trigo", "Açúcar", "Café coado", "Chocolate em pó", "Ovos"],
+        preparo: "Bata os ovos com o açúcar. Acrescente o café, a farinha e o chocolate em pó. Misture até obter uma massa uniforme e asse em forno preaquecido."
+      },
+      {
+        titulo: "Coxinha de Brigadeiro",
+        imagem: "img/coxinha-brigadeiro.svg",
+        ingredientes: ["Leite condensado", "Chocolate em pó", "Manteiga", "Morango", "Chocolate granulado"],
+        preparo: "Leve ao fogo o leite condensado, o chocolate em pó e a manteiga, mexendo até desgrudar da panela. Envolva os morangos com o brigadeiro e finalize com granulado."
+      },
+      {
+        titulo: "Panquecas Simples",
+        imagem: "img/panquecas.svg",
+        ingredientes: ["Leite", "Farinha de trigo", "Ovo", "Sal", "Óleo"],
+        preparo: "Bata todos os ingredientes até formar uma massa lisa. Despeje pequenas porções em uma frigideira untada e doure dos dois lados."
+      },
+      {
+        titulo: "Salada Colorida",
+        imagem: "img/salada.svg",
+        ingredientes: ["Alface", "Tomate", "Cenoura", "Pepino", "Azeite"],
+        preparo: "Lave e corte os vegetais. Misture em uma tigela e tempere com azeite e os temperos de sua preferência."
+      },
+      {
+        titulo: "Mousse de Chocolate",
+        imagem: "img/mousse.svg",
+        ingredientes: ["Chocolate meio amargo", "Creme de leite", "Claras", "Açúcar"],
+        preparo: "Derreta o chocolate, misture o creme de leite e incorpore delicadamente as claras batidas. Leve à geladeira até firmar."
+      }
+    ];
+
+    const getListaIngredientes = rec => {
+      let texto = "<ul>";
+      texto += rec.ingredientes.map(ingrediente => `<li>${ingrediente}</li>`).reduce((html, item) => html + item, "");
+      texto += "</ul>";
+      return texto;
+    };
+
+    const getCard = rec => `
+      <div class="card receita-card">
+        <img src="${rec.imagem}" class="card-img-top" alt="${rec.titulo}">
+        <div class="card-body">
+          <h2 class="card-title h5">${rec.titulo}</h2>
+          <div class="card-text">
+            ${getListaIngredientes(rec)}
+            <hr>
+            <p class="mb-0">${rec.preparo}</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    function preencheCatalogo() {
+      const catalogo = document.getElementById("pnlCatalogo");
+      const html = receitas.map(rec => getCard(rec)).reduce((resultado, card) => resultado + card, "");
+      catalogo.innerHTML = html;
+    }
+  </script>
+</head>
+<body class="bg-warning" onload="preencheCatalogo()">
+  <main class="container-fluid py-4 px-3 px-md-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+      <div>
+        <a href="index.html" class="text-dark text-decoration-none small">← Início</a>
+        <h1 class="mt-2 mb-0">Catálogo de Receitas</h1>
+      </div>
+      <span class="badge text-bg-dark">Receitas em JSON</span>
+    </div>
+    <div id="pnlCatalogo" class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start"></div>
+  </main>
+</body>
+</html>

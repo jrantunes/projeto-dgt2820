@@ -1,0 +1,47 @@
+:root {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.receita-card {
+  width: 250px;
+  max-width: 100%;
+  border: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.receita-card .card-img-top {
+  height: 155px;
+  object-fit: cover;
+}
+
+.receita-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.receita-card .card-text {
+  font-size: 0.92rem;
+  text-align: justify;
+}
+
+.receita-card ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.avatar-usuario {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #f8f9fa;
+}
+
+@media (max-width: 575.98px) {
+  .receita-card {
+    width: min(100%, 340px);
+  }
+}
